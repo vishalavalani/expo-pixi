@@ -1,11 +1,22 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import RNDraw from "rn-draw";
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Draw here...</Text>
+        <RNDraw
+          containerStyle={{ backgroundColor: "rgba(0,0,0,0.01)" }}
+          rewind={undo => {
+            this._undo = undo;
+          }}
+          clear={clear => {
+            this._clear = clear;
+          }}
+          color={"#000000"}
+          strokeWidth={4}
+        />
       </View>
     );
   }
@@ -14,7 +25,6 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    backgroundColor: "yellow"
   }
 });
