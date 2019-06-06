@@ -2,7 +2,7 @@
   "name": "expo-draw",
   "version": "0.0.0",
   "description": "No description",
-  "author": null,
+  "author": "Vishal Avalani",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
