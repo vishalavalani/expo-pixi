@@ -1,14 +1,13 @@
-import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
+import * as React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
 import RNDraw from "rn-draw";
-import Constants from "expo-constants";
 
-export default class App extends Component {
+export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <RNDraw
-          strokes={[]}
           containerStyle={{ backgroundColor: "rgba(0,0,0,0.01)" }}
           rewind={undo => {
             this._undo = undo;
@@ -18,7 +17,6 @@ export default class App extends Component {
           }}
           color={"#000000"}
           strokeWidth={4}
-          onChangeStrokes={strokes => console.log(strokes)}
         />
       </View>
     );
@@ -28,9 +26,9 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1",
-    padding: 8
+    backgroundColor: '#ecf0f1',
+    padding: 8,
   }
 });
